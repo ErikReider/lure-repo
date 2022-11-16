@@ -2,15 +2,16 @@
 # vim: ft=sh
 name="swayfx-git"
 _pkgname=swayfx
-_ver="1.7"
+_ver="0.1"
+_sway_ver="1.7"
 version="$_ver-r6885.2289f452"
 release=1
 desc="i3-compatible window manager for Wayland"
 homepage="https://github.com/WillPower3309/swayfx"
 architectures=("amd64")
 license=("MIT")
-provides=("sway=$_ver")
-conflicts=("sway")
+provides=("sway=$_sway_ver" "swayfx=$_ver")
+conflicts=("sway" "swayfx")
 
 build_deps=("git" "meson" "scdoc" "wayland-protocols")
 build_deps_fedora=("git" "meson" "scdoc" "wayland-protocols-devel")
