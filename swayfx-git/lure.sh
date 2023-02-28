@@ -14,10 +14,10 @@ provides=("sway=$_sway_ver" "swayfx=$_ver")
 conflicts=("sway" "swayfx")
 
 build_deps=("git" "meson" "scdoc" "wayland-protocols")
-build_deps_fedora=("git" "meson" "scdoc" "wayland-protocols-devel")
+build_deps_fedora=("git" "meson" "scdoc" "wayland-protocols-devel" "cairo-devel" "gdk-pixbuf2-devel" "json-c-devel" "pango-devel" "polkit-devel" "pcre2-devel" "wlroots-devel" "xorg-x11-server-Xwayland-devel" "libevdev-devel")
 
 deps=("cairo" "gdk-pixbuf2" "json-c" "pango" "polkit" "pcre2" "swaybg" "ttf-font" "wlroots" "xorg-server-xwayland")
-deps_fedora=("cairo-devel" "gdk-pixbuf2-devel" "json-c-devel" "pango-devel" "polkit-devel" "pcre2-devel" "swaybg" "wlroots-devel" "xorg-x11-server-Xwayland-devel")
+deps_fedora=("swaybg")
 
 sources=("git+https://github.com/WillPower3309/swayfx.git")
 checksums=("SKIP")
