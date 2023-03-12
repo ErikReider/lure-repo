@@ -2,10 +2,10 @@
 # vim: ft=sh
 name="swayfx-git"
 _pkgname=swayfx
-_ver="0.1"
-_sway_ver="1.7"
-version="$_ver-r6885.2289f452"
-release=2
+_ver="0.2"
+_sway_ver="1.8.1"
+version="$_ver-r6951.ac31a612"
+release=1
 desc="i3-compatible window manager for Wayland"
 homepage="https://github.com/WillPower3309/swayfx"
 architectures=("amd64")
