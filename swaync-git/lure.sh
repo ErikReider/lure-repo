@@ -2,8 +2,8 @@
 # vim: ft=sh
 name="swaync-git"
 _pkgname=SwayNotificationCenter
-_ver="v0.8.0"
-version="$_ver.r2.g50f40a2"
+_ver="v0.9.0"
+version="$_ver.r448.ba4a266"
 release=2
 desc="A simple notificaion daemon with a GTK panel for checking previous notifications like other DEs"
 homepage="https://github.com/ErikReider/SwayNotificationCenter"
