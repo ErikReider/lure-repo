@@ -4,7 +4,7 @@ _pkgname="SwayOSD"
 _pkgname_lower="swayosd"
 name="$_pkgname_lower-git"
 _ver="0.1.0"
-version="$_ver-r6.e9550bb"
+version="$_ver-r26.377496a"
 release=1
 desc="A GTK based on screen display for keyboard shortcuts like caps-lock and volume"
 homepage="https://github.com/ErikReider/$_pkgname"
@@ -13,10 +13,13 @@ license=("GPL3")
 provides=("$_pkgname_lower=$_ver")
 conflicts=("$_pkgname_lower")
 
-build_deps=("git" "meson" "rust" "cargo" "gtk-layer-shell")
-build_deps_fedora=("git" "meson" "rust" "cargo" "rust-glib-devel" "gtk-layer-shell-devel" "pulseaudio-libs-devel" "glib2-devel" "gtk3-devel")
+build_deps_fedora=("git" "meson" "gtk-layer-shell-devel" "pulseaudio-libs-devel" "glib2-devel" "gtk3-devel" "polkit-devel" "libinput-devel" "libevdev-devel")
 
-deps=("gtk3" "gtk-layer-shell" "glib2" "gobject-introspection" "gtk-layer-shell" "libpulse")
+# Add cargo as dependency if rustup isn't used as the rust package provider
+if ! command -v rustup &>/dev/null; then
+    build_deps_fedora+=("cargo")
+fi
+
 deps_fedora=("gtk-layer-shell" "pulseaudio-libs" "gtk3" "glib2")
 
 sources=("git+https://github.com/ErikReider/$_pkgname.git")
@@ -29,12 +32,11 @@ version() {
 
 build() {
     cd "$srcdir/$_pkgname"
-    echo "$srcdir/$_pkgname"
-    pwd
-    cargo build --release
+    meson setup --buildtype release --prefix /usr build
+    meson compile -C build
 }
 
 package() {
     cd "$srcdir/$_pkgname"
-    install -Dm755 "target/release/$_pkgname_lower" "$pkgdir/usr/bin/$_pkgname_lower"
+    DESTDIR="$pkgdir" meson install -C build
 }
