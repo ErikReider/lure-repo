@@ -1,7 +1,7 @@
 #!/bin/zsh
 # vim: ft=sh
 name="genymotion"
-version="3.5.0"
+version="3.5.1"
 _pkgFolderName="genymotion"
 _ARCH="x64"
 release=1
@@ -15,7 +15,7 @@ sources=(
     "https://dl.genymotion.com/releases/genymotion-$version/$name-$version-linux_$_ARCH.bin"
 )
 checksums=(
-    'ad9c937559f49a734bac63de85a87adbf02f4e0529344b739fe0e2d4edc6dd28'
+    'sha512:cd7b4965d32c61f20e0a00c5ce5238315eec020425f58db03c864ec8486db26a6c30003fd555c14c39e0759a01a2385c456d06af23aee2767a688d62aa041df7'
 )
 
 makedepends=("wget")
