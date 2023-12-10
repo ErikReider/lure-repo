@@ -5,7 +5,7 @@ _pkgname_lower="swayosd"
 name="$_pkgname_lower-git"
 _ver="0.1.0"
 version="$_ver-r26.377496a"
-release=1
+release=2
 desc="A GTK based on screen display for keyboard shortcuts like caps-lock and volume"
 homepage="https://github.com/ErikReider/$_pkgname"
 architectures=("amd64")
@@ -13,7 +13,7 @@ license=("GPL3")
 provides=("$_pkgname_lower=$_ver")
 conflicts=("$_pkgname_lower")
 
-build_deps_fedora=("git" "meson" "gtk-layer-shell-devel" "pulseaudio-libs-devel" "glib2-devel" "gtk3-devel" "polkit-devel" "libinput-devel" "libevdev-devel")
+build_deps_fedora=("git" "meson" "gtk-layer-shell-devel" "pulseaudio-libs-devel" "glib2-devel" "gtk3-devel" "polkit-devel" "libinput-devel" "libevdev-devel" "sassc")
 
 # Add cargo as dependency if rustup isn't used as the rust package provider
 if ! command -v rustup &>/dev/null; then
