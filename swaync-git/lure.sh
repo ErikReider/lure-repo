@@ -4,7 +4,7 @@ name="swaync-git"
 _pkgname=SwayNotificationCenter
 _ver="v0.9.0"
 version="$_ver.r448.ba4a266"
-release=2
+release=3
 desc="A simple notificaion daemon with a GTK panel for checking previous notifications like other DEs"
 homepage="https://github.com/ErikReider/SwayNotificationCenter"
 architectures=(
@@ -16,11 +16,11 @@ license=("GPL3")
 provides=("swaync=$_ver")
 conflicts=("swaync" "SwayNotificationCenter")
 
-build_deps=("git" "meson" "scdoc" "vala")
-build_deps_fedora=("git" "meson" "vala" "gtk-layer-shell-devel" "libhandy-devel" "gtk3-devel" "glib2-devel" "libgee-devel" "gobject-introspection-devel" "json-glib-devel" "pulseaudio-libs-devel")
+build_deps=("git" "meson" "scdoc" "vala" "sassc")
+build_deps_fedora=("git" "meson" "vala" "gtk-layer-shell-devel" "libhandy-devel" "gtk3-devel" "glib2-devel" "libgee-devel" "gobject-introspection-devel" "json-glib-devel" "pulseaudio-libs-devel" "sassc")
 
-deps=("gtk3" "gtk-layer-shell" "dbus" "glib2" "gobject-introspection" "libgee" "json-glib" "libhandy" "libpulse")
-deps_fedora=("gtk-layer-shell" "pulseaudio-libs" "gtk3" "glib2")
+deps=("gtk3" "gtk-layer-shell" "dbus" "glib2" "gobject-introspection" "libgee" "json-glib" "libhandy" "libpulse" "gvfs" "libnotify")
+deps_fedora=("gtk-layer-shell" "pulseaudio-libs" "gtk3" "glib2" "gvfs" "libnotify")
 
 sources=("git+https://github.com/ErikReider/SwayNotificationCenter.git")
 checksums=("SKIP")
